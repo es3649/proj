@@ -1,0 +1,8 @@
+# compiled binaries
+proj
+
+# resources
+resource/
+
+# vendored dependencies
+vendor/
