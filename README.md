@@ -1,6 +1,6 @@
 # proj
 
-**A cli for managing workspaces from the shell**
+**A command line tool for workspace management**
 
 ## Contents
 * [Commands](#commands)
