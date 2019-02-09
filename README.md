@@ -1,6 +1,6 @@
 # proj
 
-**A cli for managing workspaces from the shell**
+**A command line tool for workspace management**
 
 ## Contents
 * [Commands](#commands)
@@ -52,7 +52,13 @@ Creates a new class or class files with the given name for the language of the p
 
 # Internal
 
-`proj` maintains project details in a `.proj/` folder at the root of the project.
+`proj` maintains project details in a `.proj/` folder at the root of the project. This `.proj` is arranged in the following way:
+
+```
+- | .proj
+  `- | 
+     | projData.json
+```
 
 `~/.proj_config` maintains write protected copies of Makefiles, class files, and other scripts which are copied into directories.
 

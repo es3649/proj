@@ -27,11 +27,10 @@ func initInit() {
 
 func postRunInit(_ *cobra.Command, args []string) {
 	// initialize a git repository, including remote
-	// COMMIT NOTHING!! The user may want to privatize the repo
+	// COMMIT README ONLY!! The user may want to privatize the repo
 	// we might be able to handle this^^ with flags
+
+	// whether or not a git repository exists at this point
+	// whether we created it, or it already existed
 	// add .proj to the .gitignore
-}
-
-func runInit(cmd *cobra.Command, args []string) {
-
 }
