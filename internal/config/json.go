@@ -1,47 +1,73 @@
 package config
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"os"
+	fp "path/filepath"
+
+	"github.com/es3649/proj/pkg/log"
+	"github.com/sirupsen/logrus"
 )
 
-func locateRoot() (string, error) {
+// LoadProjData loads the configuration files for the projects
+// they are marshalled into a ProjData object
+func LoadProjData(projRoot string) (*ProjData, error) {
 
-	// check if the .proj is here
-	here, err := os.Stat(".proj")
+	// open projRoot/.proj/projData.json
 
-	// TODO fix this up
+	projDataPath := fp.Join(projRoot, ".proj/projData.json")
+	r, err := os.Open(projDataPath)
 	if err != nil {
-		if !os.IsNotExist(err) {
-			// if we got some error besides "file doesn't exist"
-			return "", fmt.Errorf("Error searching for project root: %s", err)
-		}
-		// we kinda expect it to not exist
-	} else {
-		// we found it
-		return here.Name(), nil
+		log.Log.WithFields(logrus.Fields{"where": "config.LoadProjData", "error": err}).Info(fmt.Sprintf("Failed to open `%s'", projDataPath))
+		return nil, fmt.Errorf("Failed to open `%s'", projDataPath)
 	}
 
-	initialRoot, err := os.Getwd()
+	data, err := ioutil.ReadAll(r)
 	if err != nil {
-		return "", fmt.Errorf("Error fetching working directory: %s", err)
+		log.Log.WithFields(logrus.Fields{"where": "config.LoadProjData", "error": err}).Info("Failed to read data from `projData.json'")
+		return nil, fmt.Errorf("Failed to read data from `projData.json'")
 	}
 
-	// TODO descend here
-	// we need a way to stop descending once we get to root.
-	// we look for .proj at each level
+	var projData *ProjData
 
-	err = os.Chdir(initialRoot)
+	err = json.Unmarshal(data, projData)
 	if err != nil {
-		return "", fmt.Errorf("Failed to return to the initial directory: %s", err)
+		log.Log.WithFields(logrus.Fields{"where": "config.LoadProjData", "error": err}).Info("Failed to unmarshal json data")
+		return nil, fmt.Errorf("Failed to unmarshal json data")
 	}
 
-	return "", nil
+	return projData, nil
 }
 
-// LoadConfig loads the configuration files for the projects
-// they are marshalled into a ProjData object
-func LoadConfig() (*ProjData, error) {
+// SaveProjData writes a projData object to disk
+func SaveProjData(projData *ProjData) error {
+	log.Log.WithField("projData", projData).Debug("Saving project information")
 
-	return nil, nil
+	// do projData to JSON
+	data, err := json.Marshal(*projData)
+	if err != nil {
+		log.Log.WithFields(logrus.Fields{"where": "config.SaveProjData", "error": err}).Info("Failed to Marshal to json")
+		log.Log.WithField("ProjData", fmt.Sprintf("%#v", *projData)).Debug("Failed to Marshal to json")
+		return fmt.Errorf("Failed to write to json")
+	}
+
+	// write the JSON to the .proj folder
+	w, err := os.OpenFile(fp.Join(projData.Root, ".proj/projData.json"), os.O_WRONLY, 0666)
+	defer w.Close()
+	if err != nil {
+		log.Log.WithFields(logrus.Fields{"where": "config.SaveProjData", "error": err}).Info("Failed to open `.proj/projData.json'")
+		return fmt.Errorf("Failed to open `.proj/projData.json'")
+	}
+	fmt.Println(fp.Join(projData.Root, ".proj/projData.json.IS_OPEN"))
+
+	_, err = w.Write(data)
+	if err != nil {
+		log.Log.WithFields(logrus.Fields{"where": "config.SaveProjData", "error": err}).Info("Failed to write the data")
+		return fmt.Errorf("Failed to write the data")
+	}
+	w.Sync()
+
+	return nil
 }

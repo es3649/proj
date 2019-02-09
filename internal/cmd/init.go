@@ -34,7 +34,3 @@ func postRunInit(_ *cobra.Command, args []string) {
 	// whether we created it, or it already existed
 	// add .proj to the .gitignore
 }
-
-func runInit(cmd *cobra.Command, args []string) {
-
-}
