@@ -1,0 +1,32 @@
+{
+    "folders": [
+        "bin",
+        "cmd",
+        "data",
+        "docs",
+        "src",
+        "tools"
+    ],
+    "copyFiles": [
+        {
+            "name":"Makefile",
+            "mode":644
+        },
+        {
+            "name":"path.sh",
+            "mode":755
+        },
+        {
+            "name":"tools/graphCompiler.py",
+            "mode":755
+        },
+        {
+            "name":"tools/cleanup.sh",
+            "mode":755
+        },
+        {
+            "name":"tools/objects.sh",
+            "mode":755
+        }
+    ]
+}

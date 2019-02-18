@@ -1,0 +1,25 @@
+{
+    "folders": [
+        "bin",
+        "cmd",
+        "data",
+        "docs",
+        "src",
+        "tools"
+    ],
+    "copyFiles": [
+        {
+            "name":"Makefile",
+            "mode":644
+        },
+        {
+            "name":"path.sh",
+            "mode":755
+        },
+        {
+            
+            "name":"tools/compiledocs.sh",
+            "mode":755
+        }
+    ]
+}

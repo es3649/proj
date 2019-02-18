@@ -8,7 +8,7 @@
     * [`cpp`](#init-cpp)
     * [`java`](#init-java)
   * [`class`](#class)
-* [Internal](#internal)
+* [Internal](docs/internal.md)
 
 # Commands
 
@@ -16,7 +16,7 @@
 
 ## `init`
 
-Initializes a new repository, use on of the subcommands to specify which language the 
+Initializes a new repository, use one of the subcommands to specify which language the 
 project will be written in.
 
 Creates a README.md for the project, and other files specific to the project's language.
@@ -36,6 +36,7 @@ Creates a README.md for the project, and other files specific to the project's l
 
 ## `init cpp`
 
+
 Initialzes a new c++ project. Creates a [Makefile](path/to/cpp-Makefile), a [path modifier](path/to/path-cpp.sh), as well as `src`, `bin`, `cmd`, and `data` directories.
 
 [jump to top](#proj)
@@ -50,16 +51,3 @@ Creates a new class or class files with the given name for the language of the p
 
 [jump to top](#proj)
 
-# Internal
-
-`proj` maintains project details in a `.proj/` folder at the root of the project. This `.proj` is arranged in the following way:
-
-```
-- | .proj
-  `- | 
-     | projData.json
-```
-
-`~/.proj_config` maintains write protected copies of Makefiles, class files, and other scripts which are copied into directories.
-
-[jump to top](#proj)
