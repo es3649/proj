@@ -10,8 +10,12 @@
     * [`java`](#init-java)
     * [`python`](#init-python)
   * [`class`](#class)
+<<<<<<< HEAD
   * [`mv`](#mv)
 * [Internal](#internal)
+=======
+* [Internal](docs/internal.md)
+>>>>>>> added lots of config files
 
 # Commands
 
@@ -19,7 +23,7 @@
 
 ## `init`
 
-Initializes a new repository, use on of the subcommands to specify which language the 
+Initializes a new repository, use one of the subcommands to specify which language the 
 project will be written in.
 
 Creates a README.md for the project, and other files specific to the project's language.
