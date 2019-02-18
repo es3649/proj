@@ -87,6 +87,8 @@ func copyResource(pathToResource, destination string) {
 	if os.IsNotExist(err) {
 		// open the resource
 		r, err := os.Open(pathToResource)
+		// since we could open it, there shouldn't be any error to stat it
+		// destInfo, _ := os.Stat(destination)
 		defer r.Close()
 		if err != nil {
 			log.Log.WithFields(logrus.Fields{"where": "init.copyResource", "error": err}).Info(fmt.Sprintf("Failed to open resource `%s/'", pathToResource))
@@ -95,6 +97,7 @@ func copyResource(pathToResource, destination string) {
 
 		// create the resource here
 		w, err := os.Create(destination)
+		// TODO we need to change the permissions on this file to match that of the source
 		defer w.Close()
 		if err != nil {
 			log.Log.WithFields(logrus.Fields{"where": "init.copyResource", "error": err}).Info(fmt.Sprintf("Failed to create `%s/'", destination))

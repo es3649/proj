@@ -6,3 +6,6 @@ resource/
 
 # vendored dependencies
 vendor/
+
+# github personal access token
+githubAccessToken.txt
