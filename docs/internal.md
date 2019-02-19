@@ -12,7 +12,7 @@ The internal organization of proj is as follows:
 
 When `proj` is installed, it creates a `~/.proj_config` folder where a number of resources and settings are stored.
 
-`~/.proj_config` maintains write protected copies of Makefiles, class files, and other scripts which are copied into directories. See [resource.md]() for more info on resources. These can be modified at will by the user to change the behavior of the tool.
+`~/.proj_config` maintains write protected copies of Makefiles, class files, and other scripts which are copied into directories. See [resources.md](./resources.md) for more info on resources. These can be modified at will by the user to change the behavior of the tool.
 
 
 
