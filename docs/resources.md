@@ -31,8 +31,16 @@ Perhaps a manifest.json for each language.
 }
 ```
 
-Then those files will be retreived and copied over upon new file creation. 
-Each `copyFile.name` should have a path relative to the locaiton of the `manifest.json`, and `copyFile.mode` is an octal signifying the permissions the destination file shall have.
+Then those files will be retrieved and copied over upon new file creation. 
+Each `copyFile.name` should have a path relative to the location of the `manifest.json`, and `copyFile.mode` is an octal signifying the permissions the destination file shall have.
 
 We might have some other settings, like default text headers we will put in new class files.
 We should probably store some `git` settings, or have a way to fetch those.
+
+## Config Requirements by Command
+| Command | Needs global | Needs Local |
+|---|---|---
+| init | yes | (created here) |
+| class | maybe | yes|
+| mv | no | yes |
+| version | no | no |
