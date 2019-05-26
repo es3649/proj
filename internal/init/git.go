@@ -1,6 +1,6 @@
 package init
 
-// git.go - initialized git repository
+// git.go - initializes git repository
 // Eric Steadman - Copyright 2019
 
 import (
@@ -16,5 +16,15 @@ func gitExists(base string) bool {
 
 // GitInit initializes a git repository
 func GitInit() {
+	// check if a github repository already exists here
+	// (Consider checking in lower directories as well,
+	// not sure what we would do if we find one)
 
+	// Create the repo locally
+
+	// Create the remote repo
+
+	// set the upstream for the local repo,
+	// make an initial commit
+	// push
 }

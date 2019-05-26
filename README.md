@@ -10,12 +10,7 @@
     * [`java`](#init-java)
     * [`python`](#init-python)
   * [`class`](#class)
-<<<<<<< HEAD
-  * [`mv`](#mv)
-* [Internal](#internal)
-=======
 * [Internal](docs/internal.md)
->>>>>>> added lots of config files
 
 # Commands
 
@@ -77,8 +72,7 @@ As would be expected, `mv` moves a file or directory. Based on the language spec
 
 ```
 - | .proj
-  `- | 
-     | projData.json
+  `- | projData.json
 ```
 
 `~/.proj_config` maintains write protected copies of Makefiles, class files, and other scripts which are copied into directories.

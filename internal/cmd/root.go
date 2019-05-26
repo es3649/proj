@@ -23,6 +23,14 @@ within the shell.`,
 	// Run: run,
 }
 
+func loadConfigs() {
+	// configs needed by command:
+	// init: global configs (local configs initialized)
+	// class: global configs?, local configs
+	// mv: local configs
+	// version: none
+}
+
 func init() {
 	// add and initialize subcommands
 	rootCmd.AddCommand(initCmd)

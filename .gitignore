@@ -2,7 +2,7 @@
 proj
 
 # symlink to resources
-proj_config
+projData
 
 # vendored dependencies
 vendor/
