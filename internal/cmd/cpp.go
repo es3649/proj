@@ -11,7 +11,12 @@ var initCppCmd = &cobra.Command{
 	Short: "Initializes a new c++ project",
 	Long:  `Initializes a new c++ project with a Makefile (and some accompanying shell scripts in a cmd folder)`,
 	Run:   runCpp,
+	// PersistentPreRun: loadConfigs,
 }
+
+// func loadConfigs(_ *cobra.Command, _ []string) {
+
+// }
 
 func initCpp() {
 

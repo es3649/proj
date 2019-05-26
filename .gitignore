@@ -1,8 +1,8 @@
 # compiled binaries
 proj
 
-# resources
-resource/
+# symlink to resources
+proj_config
 
 # vendored dependencies
 vendor/

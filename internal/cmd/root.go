@@ -28,8 +28,10 @@ func init() {
 	rootCmd.AddCommand(initCmd)
 	initInit()
 
-	rootCmd.AddCommand(classCmd)
+	// rootCmd.AddCommand(classCmd)
 	// initClass() this will create new class files
+
+	rootCmd.AddCommand(versionCmd)
 
 	// add flags for the root
 	rootCmd.PersistentFlags().IntVarP(&verbosity, "verbosity", "v", 0, "verbosity level [less 0-4 loud]")

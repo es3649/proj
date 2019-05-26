@@ -16,13 +16,19 @@ func initInit() {
 	// add subcommands to the root
 	initCmd.AddCommand(initCppCmd)
 	initCmd.AddCommand(initJavaCmd)
+	// initCmd.AddCommand(initPythonCmd)
+	// initCmd.AddCommand(initGoCmd)
 
 	// configure the children
 	initCpp()
 	initJava()
+	// initPython()
+	// initGo()
 
 	// add flags
-	initCmd.Flags().BoolVarP(&flags.Init.Git, "git", "g", false, "initialize a git repository with this project")
+	initCmd.Flags().BoolVarP(&flags.Init.IncludeGit, "git", "g", false, "initialize a git repository with this project")
+	initCmd.Flags().BoolVarP(&flags.Init.Git.IsPrivate, "private", "p", false, "used with -g, indicates that the new repo should be private")
+	initCmd.Flags().BoolVarP(&flags.Init.Git.OmitReadme, "omit_readme", "r", false, "used with -g, skips inclusion of a README file")
 }
 
 func postRunInit(_ *cobra.Command, args []string) {

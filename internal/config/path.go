@@ -25,7 +25,7 @@ func LoadProject() (*ProjData, error) {
 
 	fmt.Println(projLocation)
 
-	// open and unmarshall the project metadata
+	// open and unmarshal the project metadata
 
 	// check for error and return the ProjectData object
 
@@ -34,7 +34,7 @@ func LoadProject() (*ProjData, error) {
 }
 
 // IsEmptyProj determines whether the given error indicates
-// the nonexistance of a project in this directory
+// the nonexistence of a project in this directory
 func IsEmptyProj(err error) bool {
 	if fmt.Sprintf("%v", err) == "No project exists" {
 		return true
@@ -62,7 +62,7 @@ func LocateProject() (string, error) {
 	} else if err != nil && !os.IsNotExist(err) {
 		// if some error besides a not exist, it's a legit error
 		return "", fmt.Errorf("Failed to stat .proj locally: %v", err)
-	} // else it's a IsNotExist error, whcih we kinda expected. Keep looking
+	} // else it's a IsNotExist error, which we kinda expected. Keep looking
 
 	// split it into a list
 	hierarchy := strings.Split(path, "/")
