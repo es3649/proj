@@ -1,0 +1,25 @@
+{
+    "folders": [
+        "css",
+        "js",
+        "res"
+    ],
+    "copyFiles": [
+        {
+            "name":"index.html",
+            "mode":644
+        },
+        {
+            "name":"css/styles.css",
+            "mode":644
+        },
+        {
+            "name":"js/script.js",
+            "mode":644
+        },
+        {
+            "name":"css/bootstrap.css",
+            "mode":644
+        }
+    ]
+}

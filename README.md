@@ -56,6 +56,10 @@ Initializes a new c++ project. Creates a [Makefile](path/to/cpp-Makefile), a [pa
 
 [jump to top](#proj)
 
+### `init web`
+
+[jump to top](#proj)
+
 ## `class`
 
 Creates a new class or class files with the given name for the language of the project
@@ -64,7 +68,7 @@ Creates a new class or class files with the given name for the language of the p
 
 ## `mv`
 
-As would be expected, `mv` moves a file or directory. Based on the language specifications, this move also 
+As would be expected, `mv` moves a file or directory. Based on the language specifications, this move also updates packages, includes/imports and references between files.
 
 # Internal
 
