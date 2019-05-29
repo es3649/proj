@@ -1,6 +1,9 @@
 {
     "git_exists":true,
-    "project_language":"go",
+    "multiple_languages":false,
+    "project_languages":[
+        "go"
+    ],
     "name":"proj",
     "root":"/home/es3649/workspace/work/go/src/github.com/es3649/proj"
 }

@@ -9,7 +9,9 @@
     * [`go`](#init-go)
     * [`java`](#init-java)
     * [`python`](#init-python)
+  * [`add`](#add)
   * [`class`](#class)
+  * [`mv`](#mv
 * [Internal](docs/internal.md)
 
 # Commands
@@ -57,6 +59,14 @@ Initializes a new c++ project. Creates a [Makefile](path/to/cpp-Makefile), a [pa
 [jump to top](#proj)
 
 ### `init web`
+
+[jump to top](#proj)
+
+## `add`
+
+TODO is this a good idea? It might help with `mv`, but it might be extraneous, and we can determine mv behavior by file extension.
+
+Adds language support to a project. 
 
 [jump to top](#proj)
 
